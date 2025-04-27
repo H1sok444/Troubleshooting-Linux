@@ -1,1 +1,31 @@
 
+Quick Fix 1: Add the --break-system-packages Flag
+For Debian-based distributions (like Ubuntu), you can append the --break-system-packages flag to your pip command:
+
+
+pip3 install --break-system-packages -r /opt/impacket/requirements.txt
+This allows you to install packages despite the restriction.
+
+Quick Fix 2: Use a Virtual Environment (Recommended)
+Using a virtual environment isolates your Python dependencies from the system Python, avoiding conflicts:
+
+Create a virtual environment:
+w
+
+python3 -m venv /opt/impacket/venv
+Activate the virtual environment:
+
+
+source /opt/impacket/venv/bin/activate
+Install the requirements:
+
+
+pip install -r /opt/impacket/requirements.txt
+(Optional) Deactivate the virtual environment:
+
+
+deactivate
+
+OR : Sudo updatedb
+Locate EXTERNALLY-MANAGED
+Sudo rm /path/to/EXTERNALLY-MANAGED
